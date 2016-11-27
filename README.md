@@ -26,14 +26,5 @@ Copyright (c) 2016 EURL Tweag.
 
 All rights reserved.
 
-sparkle is free software, and may be redistributed under the terms
-specified in the [LICENSE](LICENSE) file.
-
-## About
-
-![Tweag I/O](http://i.imgur.com/0HK8X4y.png)
-
-sparkle is maintained by [Tweag I/O](http://tweag.io/).
-
-Have questions? Need help? Tweet at
-[@tweagio](http://twitter.com/tweagio).
+This project is free software, and may be redistributed under the
+terms specified in the [LICENSE](LICENSE) file.
