@@ -20,9 +20,9 @@ RUN mkdir -p /etc/stack \
 #   Running /usr/sbin/useradd -oN --uid 1000 --gid 1000 --home .../_home stack exited with ExitFailure 6
 #   useradd: group '1000' does not exist
 #
-# As a workaround, remove the secondary group mappings, which is fine
-# because nixbld is the primary group anyways.
-RUN sed -i 's/nixbld:x:30000:.*/nixbld:x:30000:/g' /etc/group
+# As a workaround, remove the secondary group mappings for most nix
+# build users.
+RUN sed -i 's/nixbld:x:30000:.*/nixbld:x:30000:nixbld1,nixbld2,nixbld3,nixbld4/g' /etc/group
 
 # Workaround for Java getLocalHost() failure.
 # https://github.com/1science/docker-elasticsearch/issues/1#issuecomment-106307522
