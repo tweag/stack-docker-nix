@@ -22,7 +22,11 @@ RUN nix-shell /shell.nix --indirect --add-root /nix-shell-gc-root \
 
 ## License
 
-This project is hereby dedicated to the public domain, using the
-[CC0][cc0] public domain dedication.
+To the extent possible under law, the author(s) have dedicated all
+copyright and related and neighboring rights to this software to the
+public domain worldwide. This software is distributed without any
+warranty.
+
+See the [CC0][cc0] public domain dedication for more information.
 
 [cc0]: https://creativecommons.org/publicdomain/zero/1.0/
