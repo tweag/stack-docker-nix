@@ -22,9 +22,7 @@ RUN nix-shell /shell.nix --indirect --add-root /nix-shell-gc-root \
 
 ## License
 
-Copyright (c) 2016 EURL Tweag.
+This project is hereby dedicated to the public domain, using the
+[CC0][cc0] public domain dedication.
 
-All rights reserved.
-
-This project is free software, and may be redistributed under the
-terms specified in the [LICENSE](LICENSE) file.
+[cc0]: https://creativecommons.org/publicdomain/zero/1.0/
