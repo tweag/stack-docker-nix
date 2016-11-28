@@ -16,6 +16,10 @@ RUN nix-shell /shell.nix --indirect --add-root /nix-shell-gc-root \
     && nix-collect-garbage
 ```
 
+New versions of this image are pushed to [DockerHub][dockerhub-image]
+every time the `master` branch is updated.
+
+[dockerhub-image]: https://hub.docker.com/r/tweag/stack-docker-nix/
 [stack]: https://haskellstack.org
 [stack-docker]: https://docs.haskellstack.org/en/stable/docker_integration/#configuration
 [stack-nix]: https://docs.haskellstack.org/en/stable/nix_integration/#configuration
