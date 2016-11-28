@@ -6,8 +6,9 @@ RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/community >> /etc/apk/reposit
 RUN apk --update add ca-certificates python shadow
 
 RUN nix-channel --add https://nixos.org/channels/nixpkgs-unstable && nix-channel --update
-RUN nix-env -i git stack \
-    && nix-collect-garbage
+RUN nix-env -iA nixpkgs.gitMinimal
+RUN nix-env -i stack
+RUN nix-collect-garbage -d
 # This is necessary because Stack overrides the initial PATH to some hardcoded value.
 RUN mkdir -p /usr/bin \
     && ln -s $(readlink -f $(which nix-shell)) /usr/bin/nix-shell
