@@ -12,6 +12,9 @@ for i in range(1, len(sys.argv)):
     if sys.argv[i] == 'stack':
         args.append('$STACK_IN_NIX_EXTRA_ARGS')
 
-command = ["nix-shell", "/shell.drv", "--run"] + [' '.join(args)]
+drv_exist = os.access("/shell.drv", os.F_OK)
+shell_file = "/shell.drv" if drv_exist else "/shell.nix"
+
+command = ["nix-shell", shell_file, "--run"] + [' '.join(args)]
 
 call(command)
