@@ -9,7 +9,7 @@ for i in range(1, len(sys.argv)):
     # Quote all arguments, just in case they were so originally.
     args.append("\"%s\"" % sys.argv[i])
     # XXX hack: If calling Stack have to pass env var as arguments.
-    if sys.argv[i] == 'stack':
+    if os.path.basename(sys.argv[i]) == 'stack':
         args.append('$STACK_IN_NIX_EXTRA_ARGS')
 
 drv_exist = os.access("/shell.drv", os.F_OK)
