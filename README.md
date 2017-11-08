@@ -14,6 +14,9 @@ ADD shell.nix /
 # Clean up non-essential downloaded archives after provisioning a shell.
 RUN nix-shell /shell.nix --indirect --add-root /nix-shell-gc-root \
     && nix-collect-garbage
+RUN IN_NIX_SHELL=1 nix-instantiate \
+    --add-root /shell.drv --indirect /shell.nix \
+    && nix-collect-garbage
 ```
 
 New versions of this image are pushed to [DockerHub][dockerhub-image]
