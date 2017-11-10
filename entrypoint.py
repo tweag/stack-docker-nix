@@ -23,4 +23,4 @@ shell_file = "/shell.drv" if drv_exist else "/shell.nix"
 
 command = ["nix-shell", shell_file, "--run"] + [' '.join(args)]
 
-call(command)
+os.execvp("nix-shell", command)
