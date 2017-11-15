@@ -7,7 +7,10 @@ from subprocess import call
 # Keep the platform-variant for the container as this is used to have a
 # different caching directory for the container
 stack_platform_variant = os.getenv('STACK_PLATFORM_VARIANT')
-args = ['export', "STACK_PLATFORM_VARIANT=%s;" % stack_platform_variant]
+args = [
+    'export', "STACK_PLATFORM_VARIANT=%s;" % stack_platform_variant,
+    'export', "STACK_IN_NIX_SHELL=1;", # Required by some packages to build
+  ]
 
 for i in range(1, len(sys.argv)):
     # Quote all arguments, just in case they were so originally.
